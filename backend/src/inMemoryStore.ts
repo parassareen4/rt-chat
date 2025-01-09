@@ -10,8 +10,11 @@ export  class inMemoryStore implements Store {
     constructor(){
         this.store = new Map<string,Room>()
     }
-    initRoom(){
-
+    initRoom(roomId:string){
+        this.store.set(roomId,{
+            roomId,
+            chats:[]
+        })
     }
     getChats(room: string,limit:number,offset:number){
 
